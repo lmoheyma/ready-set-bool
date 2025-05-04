@@ -3,7 +3,7 @@ sys.path.append('../')
 from cls.ASTNode import ASTNode
 
 
-def RPNtoNNF(formula):
+def negation_normal_form(formula):
 	def preprocessing(formula: str):
 		special_cases = {
 			'AB>': 'A!B|',
@@ -30,11 +30,11 @@ def RPNtoNNF(formula):
 
 
 def main():
-	print(RPNtoNNF('AB&!'))
-	print(RPNtoNNF('AB|!'))
-	print(RPNtoNNF('AB>'))
-	print(RPNtoNNF('AB='))
-	print(RPNtoNNF('AB|C&!'))
+	print(negation_normal_form('AB&!'))
+	print(negation_normal_form('AB|!'))
+	print(negation_normal_form('AB>'))
+	print(negation_normal_form('AB='))
+	print(negation_normal_form('AB|C&!'))
 	
 
 if __name__ == '__main__':
